@@ -42,8 +42,14 @@ describe Wordpress::Comments::Client do
 
     it "extracts the date (redux)" do
       # Wed, 18 Jul 2012 22:55:57 +0000
-      expect(comment[:date].year).to match_date '2012-07-18'
+      expect(comment[:date]).to match_date '2012-07-18'
     end
+  end
+
+  describe "#fetch" do
+    # https://peepcode.com/code/rspec/comments/feed.xml
+    let(:comments) { client.fetch }
+
   end
   
 end
